@@ -1,0 +1,74 @@
+{
+  "name": "@embrace-ui/icons-vue",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm run build:generate && run-p build:build build:types",
+    "build:generate": "tsx build/generate.ts",
+    "build:build": "tsx build/build.ts NODE_ENV=production",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "unpkg": "./dist/index.iife.min.js",
+  "jsdelivr": "./dist/index.iife.min.js",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*",
+        "./dist/types/*"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./global": {
+      "types": "./dist/types/global.d.ts",
+      "require": "./dist/global.cjs",
+      "import": "./dist/global.js"
+    },
+    "./*": "./*"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "icon",
+    "svg",
+    "vue",
+    "embrace-ui"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "embrace",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "@embrace-ui/icons-svg": "workspace:^",
+    "@pnpm/find-workspace-dir": "^7.0.1",
+    "@pnpm/find-workspace-packages": "^6.0.9",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.12.12",
+    "@types/prettier": "^3.0.0",
+    "camelcase": "^8.0.0",
+    "chalk": "^5.3.0",
+    "consola": "^3.2.3",
+    "esbuild": "^0.21.3",
+    "esbuild-plugin-globals": "^0.2.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5",
+    "unplugin-vue": "^5.0.5",
+    "vue": "^3.4.27",
+    "vue-tsc": "^2.0.19"
+  }
+}

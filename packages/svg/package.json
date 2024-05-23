@@ -1,0 +1,19 @@
+{
+  "name": "@embrace-ui/icons-svg",
+  "version": "1.0.0",
+  "description": "svg icon for embrace-ui icons collection.",
+  "scripts": {
+    "optimize": "svgo -f . -o ."
+  },
+  "files": [
+    "*.svg"
+  ],
+  "keywords": [
+    "embrace-ui"
+  ],
+  "author": "embrace",
+  "license": "MIT",
+  "devDependencies": {
+    "svgo": "^3.3.2"
+  }
+}
