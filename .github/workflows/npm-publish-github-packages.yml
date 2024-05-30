@@ -13,10 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - run: npm ci
+          node-version: 20
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
 
   publish-gpr:
     needs: build
@@ -26,11 +30,18 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: components build
+        run: pnpm run build
+      - name: Publish package to GitHub Packages
+        run: pnpm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOEKN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Use GITHUB_TOKEN for GitHub Packages

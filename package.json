@@ -1,7 +1,6 @@
 {
   "name": "embrace-ui-icons",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "pnpm run -c playground dev",

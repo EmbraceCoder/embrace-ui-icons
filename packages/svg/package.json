@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "svg icon for embrace-ui icons collection.",
   "scripts": {
-    "optimize": "svgo -f . -o ."
+    "optimize": "svgo -f . -o .",
+    "publish": "npm publish"
   },
   "files": [
     "*.svg"

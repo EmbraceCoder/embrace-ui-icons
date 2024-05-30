@@ -6,7 +6,8 @@
     "build": "pnpm run build:generate && run-p build:build build:types",
     "build:generate": "tsx build/generate.ts",
     "build:build": "tsx build/build.ts NODE_ENV=production",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly"
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
+    "publish": "pnpm run build && npm publish"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
