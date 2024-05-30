@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@embrace-ui/icons-svg",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "svg icon for embrace-ui icons collection.",
   "scripts": {
     "optimize": "svgo -f . -o ."
