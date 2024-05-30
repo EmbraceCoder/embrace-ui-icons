@@ -1,7 +1,8 @@
 {
-  "name": "embrace-ui-icons",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "pnpm run -c playground dev",
     "build": "pnpm run -C packages/vue build",
