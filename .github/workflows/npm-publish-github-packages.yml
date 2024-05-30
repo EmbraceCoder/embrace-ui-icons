@@ -23,6 +23,6 @@ jobs:
       - name: components build
         run: pnpm run build
       - name: Publish package to npm
-        run: pnpm publish --no-git-checks
+        run: pnpm publish -r --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
