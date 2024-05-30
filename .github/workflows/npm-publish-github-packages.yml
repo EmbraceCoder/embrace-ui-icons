@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 16
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Install dependencies
@@ -33,9 +33,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 16
           registry-url: https://registry.npmjs.org
-          always-auth: true
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Install dependencies
@@ -43,7 +42,7 @@ jobs:
       - name: components build
         run: pnpm run build
       - name: Publish package to GitHub Packages
-        run: pnpm publish -r --access public --no-git-checks
+        run: pnpm publish -r --no-git-checks
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
