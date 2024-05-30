@@ -36,7 +36,6 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org
           always-auth: true
-          npm-auth-token: ${{ secrets.NPM_TOKEN }}
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Install dependencies
@@ -44,4 +43,9 @@ jobs:
       - name: components build
         run: pnpm run build
       - name: Publish package to GitHub Packages
-        run: pnpm publish --no-git-checks # Use GITHUB_TOKEN for GitHub Packages
+        run: pnpm publish --no-git-checks
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
+        # Use GITHUB_TOKEN for GitHub Packages
